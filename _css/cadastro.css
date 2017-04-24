@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+form{
+	position: relative;
+}
+
+form fieldset{
+    margin-bottom: 40px;
+    border: 1px solid #c0c0c0;
+}
+
+form fieldset.cadastro{	
+    border: none;
+    display: none;
+}
+
+form fieldset.ativo{display: inline;}
+
+form fieldset legend{
+	padding: 5px 20px;
+	box-shadow: 0px 0px 5px #000;
+	background: #8A0000;
+	color: #fff;
+}
+
+form fieldset.cadastro legend{display:none;}
+
+h2{
+	width: 100%;
+	border-bottom: 5px solid #8A0000;
+}
+
+input[type="text"],input[type="date"],select,input[type="email"],input[type="password"]{
+	display: block;
+	padding: 10px 20px;
+	background: #fff;
+	border: 1px solid #c0c0c0;
+	color: #606060;
+}
+
+input[type="reset"],input[type="submit"],button,a.voltar{
+	background: #8A0000;
+	color: #fff;
+	border:none;
+	padding: 5px 20px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+input[type="reset"]:hover,input[type="submit"]:hover,button:hover,a.voltar:hover{
+	
+	background: #C0C0C0;
+	color: #fff;
+}
+
+input[type="reset"]:active,input[type="submit"]:active,a.voltar:active{
+	border-bottom: 3px solid #606060;
+	background: #eee;
+}
+
+input[readonly]{
+	background: #d2d2d2;
+	color: #606060;
+}
+
+.form-gp{
+    padding: 10px;
+    display: inline-block;
+    margin: 0 10px;
+    float: left;
+}
+
+.info_cadastro_progress{
+    width: 100%;
+    height: 80px;
+    margin: 50px auto;    
+    padding: 10px;
+    text-align: center;
+}
+
+.info_cadastro_progress div{
+    display: inline-table;
+    padding: 10px 20px;
+    color: #606060;
+    background: #eee;
+    margin: 10px -1px;
+    background: #c0c0c0;
+    color: #dddd;
+}
+
+.info_cadastro_progress div img{
+    -webkit-filter: grayscale(100%) opacity(20%);
+            filter: grayscale(100%) opacity(29%);
+}
+
+.info_cadastro_progress div.completa img, .info_cadastro_progress div.ativa img{
+    -webkit-filter: none;
+            filter: none;
+}
+
+.info_cadastro_progress div.completa{
+    background: #96CC00;
+    cursor: pointer;
+}
+.info_cadastro_progress div.ativa{
+    background: #eee;
+    color: #606060;
+    box-shadow: 0px 0px 10px #606060;    
+}
+
+.info_cadastro_progress div.completa:hover{
+    box-shadow: 0px 0px 10px #606060;
+}
+
+.info_cadastro_progress div.ativa span.title{
+    color: #606060;
+}
+
+.info_cadastro_progress div:first-child{border-radius: 5px 0px 0px 5px;}
+.info_cadastro_progress div:last-child{border-radius: 0px 5px 5px 0px;}
+
+.info_cadastro_progress div span.title{
+    color: #eee;
+}
+
+.info_cadastro_progress div span.status{
+    padding: 2px 5px;
+    color: #ddd;
+    border-radius: 5px;
+}
+
+.info_cadastro_progress div span.completo{
+    background: #eee;
+    color: #96CC00;
+}
+
+.info_cadastro_progress div span.andamento{
+    background: #C7D507;
+    color: #eee;
+}
+
+div.next{
+    background: none;
+    transition: right .05s ease-in;
+    color: none;
+    position: absolute;
+    top: -120px;
+    right: 100px;
+    cursor: pointer;
+}
+
+div.next img{
+    height: 64px;
+}
+
+div.next:hover{
+    background: none;
+    color: none;
+    right: 90px;    
+}
+
+div.next:active{
+    -webkit-filter: opacity(50%);
+            filter: opacity(50%);
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}

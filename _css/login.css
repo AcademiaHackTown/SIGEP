@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+form{
+	margin-top: 50px;
+	width: 230px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+form fieldset{
+    border: 1px solid #c0c0c0;
+}
+
+form fieldset legend{
+	padding: 5px 20px;
+	box-shadow: 0px 0px 5px #000;
+	background: #8A0000;
+	color: #fff;
+}
+
+input[type="text"],select,input[type="email"],input[type="password"]{
+	display: block;
+	padding: 10px 20px;
+	background: #fff;
+	border: 1px solid #c0c0c0;
+	color: #606060;
+}
+
+input[type="submit"]{
+	background: #8A0000;
+	color: #fff;
+	border:none;
+	padding: 5px 20px;
+	margin-top: 10px;
+	cursor: pointer;
+	width: 100%;
+	transition: background .3s;
+}
+
+input[type="submit"]:hover,button:hover{
+	
+	background: #C0C0C0;
+	color: #fff;
+}
+
+input[type="submit"]:active{
+	border-bottom: 3px solid #606060;
+	background: #eee;
+}
+
+input[readonly]{
+	background: #d2d2d2;
+	color: #fff;
+}
+
+form span a{
+	font-size: 9pt;
+	color: #8A0000;
+}
