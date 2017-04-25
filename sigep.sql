@@ -1,5 +1,5 @@
 CREATE TABLE `pessoa` (
-    `PSCODINT` int(11) NOT NULL,
+    `PSCODINT` int(11) NOT NULL AUTO_INCREMENT,
     `PSCPFCHA` char(11) COLLATE utf8_bin NOT NULL COMMENT 'CPF da pessoa',
     `PSTPFINT` int(11) NOT NULL COMMENT 'FK TPUSUINT',
     `PSNOMCHA` varchar(50) COLLATE utf8_bin NOT NULL COMMENT 'Nome da pessoa',
@@ -29,7 +29,7 @@ CREATE TABLE `tipo_projeto` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE `projeto` (
-    `PRCODINT` int(11) NOT NULL COMMENT 'Código do Projeto',
+    `PRCODINT` int(11) NOT NULL COMMENT 'Código do Projeto' AUTO_INCREMENT,
     `PRTITVAR` varchar(200) COLLATE utf8_bin NOT NULL,
     `PRAPEVAR` varchar(40) COLLATE utf8_bin DEFAULT 'Nenhum titulo definido',
     `PRRESVAR` text COLLATE utf8_bin NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `projeto` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Dados do projeto';
 
 CREATE TABLE `arquivos` (
-    `ARIDINT` int(11) NOT NULL,
+    `ARIDINT` int(11) NOT NULL AUTO_INCREMENT,
     `ARARQCHA` varchar(100) COLLATE utf8_bin NOT NULL,
     `ARTPINT` int(11) NOT NULL,
     `ARPRFINT` int(11) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `arquivos` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 CREATE TABLE `atividade` (
-    `ATCODINT` int(11) NOT NULL,
+    `ATCODINT` int(11) NOT NULL AUTO_INCREMENT,
     `ATPRFINT` int(11) NOT NULL,
     `ATDESVAR` text COLLATE utf8_bin NOT NULL,
     constraint pk_atividade primary key (ATCODINT),
@@ -65,7 +65,7 @@ CREATE TABLE `atividade` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 CREATE TABLE `cronograma_projeto` (
-    `CPCODINT` int(11) NOT NULL,
+    `CPCODINT` int(11) NOT NULL AUTO_INCREMENT,
     `CPPRFINT` int(11) DEFAULT NULL COMMENT 'FK de projeto',
     `CPATFINT` int(11) NOT NULL COMMENT 'FK de atividade',
     `CPME1INT` int(1) DEFAULT '0',
@@ -87,7 +87,7 @@ CREATE TABLE `cronograma_projeto` (
 
 
 CREATE TABLE `pessoa_projeto` (
-    `PPCODINT` int(11) NOT NULL,
+    `PPCODINT` int(11) NOT NULL AUTO_INCREMENT,
     `PPPRFINT` int(11) NOT NULL COMMENT 'FK DE Código Projeto',
     `PPPSFINT` int(11) NOT NULL COMMENT 'FK DE Código pessoa',
     `PPTPFINT` int(11) NOT NULL COMMENT 'Tipo de Pessoa no projeto',
@@ -98,7 +98,7 @@ CREATE TABLE `pessoa_projeto` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Pessoas do Projeto';
 
 CREATE TABLE `registro_atividade` (
-    `RACODINT` int(11) NOT NULL,
+    `RACODINT` int(11) NOT NULL AUTO_INCREMENT,
     `RACONTVAR` varchar(8000) COLLATE utf8_bin NOT NULL,
     `RADTEDAT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     `RADTADAT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -112,7 +112,7 @@ CREATE TABLE `registro_atividade` (
 
 CREATE TABLE `tarefas` (
     `tratfint` int(11) NOT NULL COMMENT 'FK de Atvidade',
-    `trcodint` int(11) NOT NULL COMMENT 'Código da tarefa',
+    `trcodint` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Código da tarefa',
     `trdesvar` varchar(1000) NOT NULL COMMENT 'Descrição da tarefa',
     `trdticha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data inicio',
     `trdtfcha` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Data fim',
@@ -127,7 +127,7 @@ CREATE TABLE `tarefas` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tarefa_entrega` (
-    `TECODINT` int(11) NOT NULL,
+    `TECODINT` int(11) NOT NULL AUTO_INCREMENT,
     `TECONTVAR` text COLLATE utf8_bin NOT NULL,
     `TEARQVAR` varchar(4000) COLLATE utf8_bin NOT NULL,
     `TETRFINT` int(11) NOT NULL COMMENT 'FK de tarefa',
